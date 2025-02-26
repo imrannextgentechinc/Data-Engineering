@@ -1,0 +1,51 @@
+# Object-Oriented Programming (OOP) Concepts
+
+#Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects", which can contain data and code that manipulates the data. The key concepts of OOP are:
+
+#1. **Class**: A blueprint for creating objects. A class defines a set of attributes and methods that the created objects will have.
+
+#2. **Object**: An instance of a class. Objects are created using the class definition and can have their own unique data.
+
+#3. **Encapsulation**: The bundling of data and methods that operate on the data within one unit, e.g., a class. It restricts direct access to some of the object's components, which is a means of preventing accidental interference and misuse of the data.
+
+#4. **Inheritance**: A mechanism where a new class inherits properties and behavior (methods) from an existing class. This allows for code reusability and the creation of a hierarchical relationship between classes.
+
+#5. **Polymorphism**: The ability of different classes to be treated as instances of the same class through inheritance. It allows methods to be used interchangeably, even if they are implemented differently in different classes.
+
+#6. **Abstraction**: The concept of hiding the complex implementation details and showing only the necessary features of an object. It helps in reducing programming complexity and effort.
+
+## Example in Python
+
+# Example of a Class and Object
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        return f"{self.name} says woof!"
+
+# Creating an object of the Dog class
+my_dog = Dog("Buddy", 3)
+print(my_dog.bark())  # Output: Buddy says woof!
+
+# Example of Inheritance
+class Puppy(Dog):
+    def __init__(self, name, age, breed):
+        super().__init__(name, age)
+        self.breed = breed
+
+    def bark(self):
+        return f"{self.name}, the {self.breed} puppy, says woof!"
+
+# Creating an object of the Puppy class
+my_puppy = Puppy("Max", 1, "Golden Retriever")
+print(my_puppy.bark())  # Output: Max, the Golden Retriever puppy, says woof!
+
+# Example of Polymorphism
+def make_bark(dog):
+    print(dog.bark())
+
+make_bark(my_dog)    # Output: Buddy says woof!
+make_bark(my_puppy)  # Output: Max, the Golden Retriever puppy, says woof!
+
